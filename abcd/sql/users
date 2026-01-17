@@ -1,0 +1,11 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO users (username, email, password_hash)
+VALUES ('testuser', 'test@example.com', 
+        '$2y$10$u1K5VdT9e4hQZ1kYq9xFWe6f5FZ9e3OZtPX6pZsf2tQsjkI3p4R0G');
