@@ -17,24 +17,34 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="login-container">
+    <div class="registration-container">
     <h1>Register</h1>
 
-    <form method="post" action="registration_handler.php">
+    <form method="post" action="php/registration_handler.php" novalidate>
         <label for="username">Username</label>
-        <input type="username" id="username" name="username" required>
+        <input type="test" id="username" name="username" required>
+        <div class="error" id="username-error"></div>
 
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
+        <div class="error" id="email-error"></div>
 
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
+        <div class="error" id="password-error"></div>
 
-        <button type="submit">Login</button>
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <div class="error" id="confirm-password-error"></div>
+
+        <button type="submit">Register</button>
     </form>
 
     <div class="extra-links">
         <p>Already have an account? <a href="login.php">Login here</a></p>
     </div>
+
+    <script src="javascript/registration.js"></script>
+
 </body>
 </html>

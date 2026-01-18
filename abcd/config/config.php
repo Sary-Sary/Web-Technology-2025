@@ -13,7 +13,7 @@ return (object) [
 
     // Database config
     'DB_HOST' => '127.0.0.1',
-    'DB_NAME' => 'escape_room_db',
+    'DB_NAME' => 'escape_room',
     'DB_USER' => 'root',
     'DB_PASS' => '',
 

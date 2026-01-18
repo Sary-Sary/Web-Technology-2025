@@ -1,4 +1,4 @@
-.login-container {
+.login-container, .registration-container {
     background-color: #1e1e1e;
     padding: 2rem;
     border-radius: 8px;
@@ -17,4 +17,12 @@ label {
     text-align: centre;
     margin-top: 1rem;
     font-size: 0.85rem;
+}
+
+.error {
+
+    font-size: small;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+
 }
