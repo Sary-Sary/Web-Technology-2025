@@ -1,0 +1,37 @@
+#room-creation-div, #join-room-div, #waiting-room-div {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#room-creation-div.hidden, #join-room-div.hidden, #waiting-room-div.hidden {
+    display: none;
+}
+
+.waiting-layout {
+    display: flex;
+    gap: 2rem;
+    min-width: 500px;
+}
+
+.waiting-left,
+.waiting-right {
+    flex: 1;
+}
+
+.box-content {
+    background: #000;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 300px;
+}
+
+#room-code {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}

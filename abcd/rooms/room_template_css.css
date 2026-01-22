@@ -1,0 +1,90 @@
+.room-layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0f1220;
+    color: #eaeaff;
+    font-family: Arial, sans-serif;
+}
+
+.room-topbar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1rem;
+
+    background-color: #16192f;
+    border-bottom: 2px solid #7c8cff;
+}
+
+.room-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.room-canvas {
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+
+    background-color: #0f1220;
+    border: 2px solid #2b2f55;
+    border-radius: 12px;
+
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+/* ===== Modal ===== */
+
+.modal.hidden {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-box {
+    position: relative;
+    max-width: 500px;
+    margin: 15vh auto;
+    padding: 1.5rem;
+
+    background-color: #16192f;
+    border: 2px solid #7c8cff;
+    border-radius: 12px;
+    color: #eaeaff;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.modal-box h2 {
+    margin-top: 0;
+}
+
+.modal-box button {
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    background-color: #7c8cff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-box button:hover {
+    background-color: #93a0ff;
+}
