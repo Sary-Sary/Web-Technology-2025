@@ -22,13 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('leave-button').addEventListener('click', () => {
-    fetch('coop/leave_waiting_room.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `room_code=<?= urlencode($roomCode) ?>`
-    }).finally(() => {
-        window.location.href = '../test.php'; // <-- your target page
+        fetch(`${BASE_URL}/coop/leave_waiting_room.php`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `room_code=${encodeURIComponent(window.ROOM_CODE)}`
+        }).finally(() => {
+            window.location.href = `${BASE_URL}/test.php`;
+        });
     });
-});
 
 });

@@ -1,7 +1,4 @@
 <?php
-// room_template.php
-
-// Defaults (in case a room forgets something)
 $room_title   = $room_title   ?? 'Escape Room';
 $room_content = $room_content ?? '';
 $room_css     = $room_css     ?? null;
@@ -13,9 +10,9 @@ $room_js      = $room_js      ?? null;
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($room_title) ?></title>
 
-    <link rel="stylesheet" href="../base css/base.css">
-    <link rel="stylesheet" href="../base css/components.css">
-    <link rel="stylesheet" href="room_template_css.css">
+    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/base css/base.css">
+    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/base css/components.css">
+    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/rooms/room_template_css.css">
 
     <?php if ($room_css): ?>
         <link rel="stylesheet" href="../<?= htmlspecialchars($room_css) ?>">
@@ -55,7 +52,10 @@ $room_js      = $room_js      ?? null;
 <script src="../<?= htmlspecialchars($room_js) ?>"></script>
 <?php endif; ?>
 
-<script src="room_template_js.js"></script>
+<script>
+    const BASE_URL = <?= json_encode($config->BASE_URL) ?>;
+</script>
+<script src="<?= $config->BASE_URL ?>/rooms/room_template_js.js"></script>
 
 </body>
 </html>

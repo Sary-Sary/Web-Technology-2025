@@ -7,7 +7,7 @@ return (object) [
     'APP_AUTHOR' => 'Symona',
 
     // URLs & paths
-    'BASE_URL' => 'http://localhost/escape_room',
+    'BASE_URL' => 'http://localhost:8080/abcd',
     'ROOT_PATH' => __DIR__,
     'ASSETS_PATH' => '/public/assets',
 
