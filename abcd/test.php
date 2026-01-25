@@ -14,8 +14,10 @@
         <button type="submit">Logout</button>
     </form>
 
+    <button id="story-mode-button">Story mode</button>
+
     <button id="create-room-button">Create co-op room</button>
-    
+
     <button id="join-room-button">Join co-op room</button>
 
     <div id="join-room-div" class="hidden">
@@ -50,6 +52,7 @@
     <script src="coop/javascript/create_room_js.js"></script>
     <script src="coop/javascript/join_room_js.js"></script>
     <script src="coop/javascript/waiting_room.js"></script>
+    <script src="find_story_progress/find_room_story.js"></script>
 
 </body>
 </html>

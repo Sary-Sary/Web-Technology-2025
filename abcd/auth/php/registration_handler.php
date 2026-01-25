@@ -20,5 +20,13 @@ $hash = password_hash($password, PASSWORD_DEFAULT);
 $stmt = $pdo->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
 $stmt->execute([$username, $email, $hash]);
 
+$player_id = $pdo->lastInsertId();
+
+$stmt = $pdo->prepare("
+    INSERT INTO player_rooms (player_id, room_id, completed)
+    SELECT ?, id, 0 FROM rooms
+");
+$stmt->execute([$player_id]);
+
 header('Location: ../login.php');
 exit;

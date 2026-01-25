@@ -5,17 +5,15 @@
     overflow: hidden;
 }
 
-/* Everything that scrolls */
 .scene-world {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width: 2000px; /* wider than viewport */
+    width: 2000px; 
     display: block;
 }
 
-/* Background image */
 .scene-background {
     position: absolute;
     top: 0;
@@ -26,7 +24,6 @@
     pointer-events: none;
 }
 
-/* Interactive items */
 .item {
     position: absolute;
     z-index: 10;

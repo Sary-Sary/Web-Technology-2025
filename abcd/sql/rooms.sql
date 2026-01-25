@@ -1,3 +1,21 @@
+CREATE TABLE rooms (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    room_order INT NOT NULL UNIQUE,
+    room_name VARCHAR(100) NOT NULL,
+    file_path VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE player_rooms (
+    player_id INT NOT NULL,
+    room_id INT NOT NULL,
+    completed TINYINT(1) DEFAULT 0,
+
+    PRIMARY KEY (player_id, room_id),
+
+    FOREIGN KEY (player_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE
+);
+
 CREATE TABLE coop_rooms (
     id INT AUTO_INCREMENT PRIMARY KEY,
     room_code VARCHAR(10) NOT NULL UNIQUE,
