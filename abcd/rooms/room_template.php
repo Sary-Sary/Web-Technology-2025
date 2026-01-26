@@ -3,6 +3,8 @@ $room_title   = $room_title   ?? 'Escape Room';
 $room_content = $room_content ?? '';
 $room_css     = $room_css     ?? null;
 $room_js      = $room_js      ?? null;
+$room_background  = $room_background ?? null;
+$initial_scene_id = $initial_scene_id ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +12,8 @@ $room_js      = $room_js      ?? null;
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($room_title) ?></title>
 
-    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/base css/base.css">
-    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/base css/components.css">
+    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/base_css/base.css">
+    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/base_css/components.css">
     <link rel="stylesheet" href="<?= $config->BASE_URL ?>/rooms/room_template_css.css">
 
     <?php if ($room_css): ?>
@@ -42,7 +44,15 @@ $room_js      = $room_js      ?? null;
 
     <main class="room-content">
         <div class="room-canvas">
-            <?= $room_content ?>
+            <div class="room-scene" id="room-scene"
+             style="
+            background-image: url('<?= htmlspecialchars($room_background) ?>');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            ">
+                <?= $room_content ?>
+            </div>
         </div>
     </main>
 
@@ -54,8 +64,17 @@ $room_js      = $room_js      ?? null;
 
 <script>
     const BASE_URL = <?= json_encode($config->BASE_URL) ?>;
+    const INITIAL_SCENE_ID = <?= json_encode($initial_scene_id) ?>;
 </script>
 <script src="<?= $config->BASE_URL ?>/rooms/room_template_js.js"></script>
-
+<script src="<?= $config->BASE_URL ?>/rooms/change_scene.js"></script>
 </body>
 </html>
+
+<style>
+.triangle {
+    background-image: url("<?= $config->BASE_URL ?>/rooms/assets/triangle.png");
+    width: 20px;
+    height: 20px;
+}
+</style>

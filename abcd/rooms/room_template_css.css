@@ -35,8 +35,20 @@
     border: 2px solid #2b2f55;
     border-radius: 12px;
 
-    padding: 1.5rem;
-    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;      
+    overflow: hidden;
+}
+
+
+.room-scene {
+    width: 1400px;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
 }
 
 /* ===== Modal ===== */

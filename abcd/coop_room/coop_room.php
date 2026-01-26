@@ -37,8 +37,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Room <?php echo htmlspecialchars($roomCode); ?></title>
-    <link rel="stylesheet" href="../base css/base.css">
-    <link rel="stylesheet" href="../base css/components.css">
+    <link rel="stylesheet" href="../base_css/base.css">
+    <link rel="stylesheet" href="../base_css/components.css">
 </head>
 <body>
     <h1>Room <?php echo htmlspecialchars($roomCode); ?></h1>
