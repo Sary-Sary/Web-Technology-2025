@@ -1,0 +1,15 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO users (username, email, password_hash)
+VALUES ('admin', 'admin@admin.com', 
+        '$2y$10$SelaF6Z.kbn/ex5ky08O4eu0waeAgp0XJO/gvBaXJHjRGe1kattQ2');
+
+INSERT INTO users (username, email, password_hash)
+VALUES ('lana', 'lana@lana.com', 
+        '$2y$10$aCF26Jc1RoVXFO4hJiuQg.98Y4l6lOCezO7Y13WB3gx8B5.pnEzrK');

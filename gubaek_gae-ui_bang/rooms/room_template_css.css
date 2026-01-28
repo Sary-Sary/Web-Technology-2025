@@ -1,0 +1,166 @@
+.room-layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0f1220;
+    color: #eaeaff;
+    font-family: Arial, sans-serif;
+}
+
+.room-topbar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1rem;
+
+    background-color: #16192f;
+    border-bottom: 2px solid #7c8cff;
+}
+
+.room-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.room-canvas {
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+
+    background-color: #0f1220;
+    border: 2px solid #2b2f55;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;      
+    overflow: hidden;
+}
+
+
+.room-scene {
+    width: 1400px;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-box {
+    position: relative;
+    max-width: 500px;
+    margin: 15vh auto;
+    padding: 1.5rem;
+
+    background-color: #16192f;
+    border: 2px solid #7c8cff;
+    border-radius: 12px;
+    color: #eaeaff;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.modal-box h2 {
+    margin-top: 0;
+}
+
+.modal-box button {
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    background-color: #7c8cff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-box button:hover {
+    background-color: #93a0ff;
+}
+
+.inventory {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.inventory.hidden {
+    display: none;
+}
+
+.inventory-content {
+    background: #111;
+    border: 2px solid #2b2f55;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.inventory-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.inventory-content li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #7c8cff;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.05);
+    width: 100px;
+}
+
+.inventory-content li img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.inventory-content li span {
+    text-align: center;
+    font-size: 0.9rem;
+}
+

@@ -1,0 +1,61 @@
+.coop-layout {
+    display: flex;
+    height: 100vh;
+}
+
+.player-panel h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.player-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.player-panel li {
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    background: #2c2c2c;
+    border-radius: 6px;
+}
+
+.coop-layout {
+    display: flex;
+    height: 100vh;
+}
+
+.player-panel {
+    width: 220px;
+    background: #16192f;
+    color: #eaeaff;
+    padding: 1rem;
+    border-right: 2px solid #7c8cff;
+}
+
+.game-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-canvas {
+    position: relative;
+}
+
+.timer-box {
+    position: absolute;
+    top: 100px;
+    right: 70px;
+
+    background: rgba(22,25,47,0.9);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid #7c8cff;
+    z-index: 50;
+}
