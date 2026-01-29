@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('leave-button').addEventListener('click', () => {
-        fetch(`${BASE_URL}/coop/leave_waiting_room.php`, {
+        fetch(`../../coop/leave_waiting_room.php`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: `room_code=${encodeURIComponent(window.ROOM_CODE)}`
         }).finally(() => {
-            window.location.href = `${BASE_URL}/test.php`;
+            window.location.href = `../../test.php`;
         });
     });
 

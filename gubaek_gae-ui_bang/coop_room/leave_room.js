@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body: "room_code=" + encodeURIComponent(ROOM_CODE)
         });
 
-        window.location.href = BASE_URL + "/test.php";
+        window.location.href = "../test.php";
     });
 });
 
@@ -17,7 +17,7 @@ console.log('??');
 
 async function update_players() {
     const response = await fetch(
-        "coop_players.php?code=" + encodeURIComponent(ROOM_CODE)
+        "../../coop_room/coop_players.php?code=" + encodeURIComponent(ROOM_CODE)
     );
     const players = await response.json();
 

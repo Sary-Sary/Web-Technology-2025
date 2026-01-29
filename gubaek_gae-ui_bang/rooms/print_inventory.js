@@ -8,7 +8,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 async function update_inventory() {
-    const res = await fetch(`${BASE_URL}/rooms/get_inventory_items.php?room_id=${ROOM_ID}`);
+    const res = await fetch(`../get_inventory_items.php?room_id=${ROOM_ID}`);
     const items = await res.json();
 
     inventoryList.innerHTML = '';
@@ -16,7 +16,7 @@ async function update_inventory() {
         const li = document.createElement('li');
 
         const img = document.createElement('img');
-        img.src = BASE_URL + "/rooms/" + item.item_image;
+        img.src = "../" + item.item_image;
         img.alt = item.item_name;
         img.width = 40;
 

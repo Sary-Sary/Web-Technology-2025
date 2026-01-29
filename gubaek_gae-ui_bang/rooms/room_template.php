@@ -22,9 +22,9 @@ $room_id = $room_data['id'];
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($room_title) ?></title>
 
-    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/base_css/base.css">
-    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/base_css/components.css">
-    <link rel="stylesheet" href="<?= $config->BASE_URL ?>/rooms/room_template_css.css">
+    <link rel="stylesheet" href="../../base_css/base.css">
+    <link rel="stylesheet" href="../../base_css/components.css">
+    <link rel="stylesheet" href="../../rooms/room_template_css.css">
 
     <?php if ($room_css): ?>
         <link rel="stylesheet" href="../<?= htmlspecialchars($room_css) ?>">
@@ -80,24 +80,23 @@ $room_id = $room_data['id'];
 <?php endif; ?>
 
 <script>
-    const BASE_URL = <?= json_encode($config->BASE_URL) ?>;
     const INITIAL_SCENE_ID = <?= json_encode($initial_scene_id) ?>;
     const ROOM_ID = <?= json_encode($room_id) ?>;
 
 </script>
 
-<script src="<?= $config->BASE_URL ?>/rooms/room_template_js.js"></script>
-<script src="<?= $config->BASE_URL ?>/rooms/change_scene.js"></script>
-<script src="<?= $config->BASE_URL ?>/rooms/collect_item.js"></script>
-<script src="<?= $config->BASE_URL ?>/rooms/finish_room.js"></script>
-<script src="<?= $config->BASE_URL ?>/rooms/print_inventory.js"></script>
-<script src="<?= $config->BASE_URL ?>/rooms/render_found_items.js"></script>
+<script src="../room_template_js.js"></script>
+<script src="../change_scene.js"></script>
+<script src="../collect_item.js"></script>
+<script src="../finish_room.js"></script>
+<script src="../print_inventory.js"></script>
+<script src="../render_found_items.js"></script>
 </body>
 </html>
 
 <style>
 .triangle {
-    background-image: url("<?= $config->BASE_URL ?>/rooms/assets/triangle.png");
+    background-image: url("../assets/triangle.png");
     width: 20px;
     height: 20px;
 }

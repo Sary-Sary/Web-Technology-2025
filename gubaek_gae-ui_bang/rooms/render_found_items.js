@@ -12,7 +12,7 @@ function render_items(items) {
 }
 
 async function update_room_items() {
-    const res = await fetch(`${BASE_URL}/rooms/get_items.php?room_id=${ROOM_ID}`);
+    const res = await fetch(`../get_items.php?room_id=${ROOM_ID}`);
     const items = await res.json();
     render_items(items);
 }

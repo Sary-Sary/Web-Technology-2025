@@ -7,7 +7,7 @@ return (object) [
     'APP_AUTHOR' => 'Symona Antonov',
 
     // URLs & paths
-    'BASE_URL' => 'http://localhost:8080/gubaek_gae-ui_bang',
+    'BASE_URL' => '/gubaek_gae-ui_bang',
     'ROOT_PATH' => __DIR__,
     'ASSETS_PATH' => '/rooms/assets',
 

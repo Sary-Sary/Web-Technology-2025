@@ -32,9 +32,10 @@ $room_html = ob_get_clean();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href='../rooms/room_one/'>
     <meta charset="UTF-8">
     <title>Room <?php echo htmlspecialchars($room_code); ?></title>
-    <link rel="stylesheet" href="coop_ui.css">
+    <link rel="stylesheet" href="../../coop_room/coop_ui.css">
 </head>
 <body>
 
@@ -56,7 +57,7 @@ $room_html = ob_get_clean();
 <script>
 async function update_timer() {
     const response = await fetch(
-        "coop_timer.php?code=<?php echo urlencode($room_code); ?>"
+        "../../coop_room/coop_timer.php?code=<?php echo urlencode($room_code); ?>"
     );
     const data = await response.json();
 
@@ -78,7 +79,7 @@ update_timer();
 const ROOM_CODE = <?= json_encode($room_code) ?>;
 </script>
 
-<script src="leave_room.js"></script>
+<script src="../../coop_room/leave_room.js"></script>
 
 </body>
 </html>
