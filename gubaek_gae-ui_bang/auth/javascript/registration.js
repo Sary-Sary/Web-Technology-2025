@@ -124,6 +124,21 @@ const check_user_exists = async (username) => {
     return data.exists;
 };
 
+const check_email_exists = async (email) => {
+    const response = await fetch(
+        `/gubaek_gae-ui_bang/auth/php/check_email.php?email=${encodeURIComponent(email)}`
+    );
+
+    if (!response.ok) {
+        throw new Error('Failed to check email');
+    }
+
+    console.log("Checked for email");
+
+    const data = await response.json();
+    return data.exists;
+};
+
 const register_user = async (userData) => {
     const response = await fetch('https://jsonplaceholder.typicode.com/users', {
         method: 'POST',
@@ -140,6 +155,7 @@ const register_user = async (userData) => {
 const validate_submission = () => {
     const form = document.querySelector('form');
     const username_error = document.getElementById("username-error");
+    const email_error = document.getElementById("email-error");
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -150,6 +166,7 @@ const validate_submission = () => {
         }
 
         const username_value = document.getElementById("username").value;
+        const email_value = document.getElementById("email").value;
 
         try {
             const username_exists = await check_user_exists(username_value);
@@ -159,14 +176,30 @@ const validate_submission = () => {
                 return;
             }
 
-            form.submit();
-
         } catch (error) {
             console.error(error);
             username_error.textContent =
                 'Could not verify username. Please try again.';
         }
+
+        try {
+            const email_exists = await check_email_exists(email_value);
+
+            if (email_exists) {
+                email_error.textContent = 'This email is already taken';
+                return;
+            }
+
+            form.submit();
+
+        } catch (error) {
+            console.error(error);
+            email_error.textContent =
+                'Could not verify email. Please try again.';
+        }
+
     });
+
 };
 
 document.addEventListener('DOMContentLoaded', validate_submission);

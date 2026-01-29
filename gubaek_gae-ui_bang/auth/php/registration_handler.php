@@ -15,6 +15,12 @@ if ($stmt->rowCount() > 0) {
     die('Username already taken');
 }
 
+$stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
+$stmt->execute([$email]);
+if ($stmt->rowCount() > 0) {
+    die('Email already taken');
+}
+
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = $pdo->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
