@@ -12,4 +12,4 @@ VALUES ('admin', 'admin@admin.com',
 
 INSERT INTO users (username, email, password_hash)
 VALUES ('lana', 'lana@lana.com', 
-        '$2y$10$aCF26Jc1RoVXFO4hJiuQg.98Y4l6lOCezO7Y13WB3gx8B5.pnEzrK');
+        '$2y$10$Kv10c/FAqh1.7Id7oh4hfOjssuPKdj8imhp0H22p5p3QtsbnYCEFK');
